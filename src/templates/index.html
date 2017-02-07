@@ -1,0 +1,19 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		<button class="btn js-modal-open" data-target="first" data-file="popup-first.html">open popup first popup</button>
+		<button class="btn js-modal-open" data-target="second" data-file="popup-first.html">open popup second popup</button>
+	</div>
+
+	<div class="popup js-modal" data-modal="first">
+		<div class="popup__inner js-modal-inner">
+			<button class="btn js-modal-close">CLOSE</button>
+			<div class="js-modal-info"></div>
+		</div>
+	</div>
+
+{% endblock %}

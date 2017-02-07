@@ -1,0 +1,44 @@
+
+.inner
+	padding: 100px 20px
+	text-align: center
+
+.btn
+	display: inline-block
+	vertical-align: top
+	padding: 10px 20px
+	background: gold
+	text-transform: uppercase
+
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+
+	opacity: 0
+	visibility: hidden
+	background: rgba(#000, 0.5)
+
+	+vertical
+
+	transition: opacity 0.3s ease, visibility 0.3s ease
+	&.is-open
+		opacity: 1
+		visibility: visible
+		transition: opacity 0.3s ease, visibility 0.3s ease
+	&__inner
+		display: inline-block
+		vertical-align: middle
+		padding: 40px
+		border-radius: 5px
+		width: 100%
+		max-width: 600px
+
+		background: #fff
+
+		font-size: 16px
+		text-align: left
+	.btn, h2
+		margin-bottom: 16px
