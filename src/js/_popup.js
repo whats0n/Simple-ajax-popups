@@ -130,25 +130,19 @@ export default (function () {
 			this._opened = true;
 			this._modal.container.classList.add(OPEN);
 			if (!this._onOpenCallbacks.length) return;
-			each(this._onOpenCallbacks, callback => {
-				if (typeof callback == 'function') callback();
-			});
+			this._onOpenCallbacks.forEach(callback => {if (typeof callback == 'function') callback()});
 		}
 
 		_close() {
 			this._opened = false;
 			this._modal.container.classList.remove(OPEN);
 			if (!this._onCloseCallbacks.length) return;
-			each(this._onCloseCallbacks, callback => {
-				if (typeof callback == 'function') callback();
-			});
+			this._onCloseCallbacks.forEach(callback => {if (typeof callback == 'function') callback()});
 		}
 
 		_onLoaded(content) {
 			if (!this._onLoadedCallbacks.length) return;
-			each(this._onLoadedCallbacks, callback => {
-				if (typeof callback == 'function') callback(content);
-			});
+			this._onLoadedCallbacks.forEach(callback => {if (typeof callback == 'function') callback(content)});
 		}
 
 		onOpen(callback) {
